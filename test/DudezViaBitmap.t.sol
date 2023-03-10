@@ -6,12 +6,12 @@ import {Vm} from "forge-std/Vm.sol";
 import {DudezViaBitmap} from "src/DudezViaBitmap.sol";
 
 contract DudezViaBitmapTest is DSTest {
-
     DudezViaBitmap deployedDudez;
     Vm internal immutable vm = Vm(HEVM_ADDRESS);
     address bob = address(0x1);
     address jon = address(0x2);
     address sal = address(0x3);
+
     error CanOnlyMintOnce();
 
     function setUp() public {
@@ -53,7 +53,7 @@ contract DudezViaBitmapTest is DSTest {
         vm.startPrank(bob);
         deployedDudez.mintWihtoutCounter();
         vm.stopPrank();
-        vm.startPrank(jon);       
+        vm.startPrank(jon);
         deployedDudez.mintWihtoutCounter();
         vm.stopPrank();
         vm.startPrank(sal);

@@ -6,12 +6,12 @@ import {Vm} from "forge-std/Vm.sol";
 import {DudezViaInt} from "src/DudezViaInt.sol";
 
 contract DudezViaIntTest is DSTest {
-
     DudezViaInt deployedDudez;
     Vm internal immutable vm = Vm(HEVM_ADDRESS);
     address bob = address(0x1);
     address jon = address(0x2);
     address sal = address(0x3);
+
     error CanOnlyMintOnce();
 
     function setUp() public {
@@ -48,7 +48,7 @@ contract DudezViaIntTest is DSTest {
         vm.startPrank(bob);
         deployedDudez.mint();
         vm.stopPrank();
-        vm.startPrank(jon);       
+        vm.startPrank(jon);
         deployedDudez.mint();
         vm.stopPrank();
         vm.startPrank(sal);
