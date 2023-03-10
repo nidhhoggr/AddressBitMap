@@ -23,7 +23,7 @@ contract DudezViaBitmap is ERC721A {
         _mint(msg.sender, 1);
     }
 
-    function mintWihtoutCounter() public payable {
+    function mintWithoutCounter() public payable {
         uint256 addrToBytes = uint256(uint160(msg.sender));
         if (userMint.get(addrToBytes)) revert CanOnlyMintOnce();
         userMint.set(addrToBytes);

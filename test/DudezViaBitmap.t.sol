@@ -29,7 +29,7 @@ contract DudezViaBitmapTest is DSTest {
 
     function testMintWithoutCounter() public {
         vm.startPrank(bob);
-        deployedDudez.mintWihtoutCounter();
+        deployedDudez.mintWithoutCounter();
     }
 
     function testMint2() public {
@@ -51,13 +51,13 @@ contract DudezViaBitmapTest is DSTest {
 
     function testGetCount() public {
         vm.startPrank(bob);
-        deployedDudez.mintWihtoutCounter();
+        deployedDudez.mintWithoutCounter();
         vm.stopPrank();
         vm.startPrank(jon);
-        deployedDudez.mintWihtoutCounter();
+        deployedDudez.mintWithoutCounter();
         vm.stopPrank();
         vm.startPrank(sal);
-        deployedDudez.mintWihtoutCounter();
+        deployedDudez.mintWithoutCounter();
         assert(deployedDudez.getMinted() == 3);
     }
 }
